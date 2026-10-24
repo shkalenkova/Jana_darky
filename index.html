@@ -136,8 +136,8 @@ footer svg{width:46px;height:auto;margin:0 auto 6px}
 @keyframes flicker{from{transform:scaleY(1) skewX(-4deg)}to{transform:scaleY(1.18) skewX(4deg)}}
 .glow{opacity:.5}
 
-.hero-cake{display:block;width:min(230px,58vw);margin:4px auto 0;padding:0;border:0;background:none;box-shadow:none;cursor:pointer;
-  border-radius:24px;animation:wiggle 4s ease-in-out infinite}
+.hero-cake{display:block;width:min(290px,74vw);margin:0 auto -6px;padding:22px 30px 18px;border:0;background:var(--sun);box-shadow:0 0 0 10px var(--sun);cursor:pointer;
+  border-radius:50%;position:relative;z-index:1;animation:wiggle 4s ease-in-out infinite}
 .hero-cake svg{display:block;width:100%;height:auto;overflow:visible}
 .hero-cake:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
 .hint{display:inline-block;margin:6px 0 14px;font-weight:800;font-size:15px;color:#fff;background:var(--ink);border-radius:999px;padding:4px 14px}
@@ -215,6 +215,36 @@ const ART = {
     <circle cx="250" cy="160" r="18" fill="#FFD23F" stroke="#2A1E05" stroke-width="4"/>
     <path d="M100 276 l60 -70 l40 44 l30 -30 l70 56 z" fill="#14B8A6" stroke="#2A1E05" stroke-width="4" stroke-linejoin="round"/>
     <path d="M150 150 c-12 -14 -30 0 -18 14 l18 16 l18 -16 c12 -14 -6 -28 -18 -14 z" fill="#E8336F" stroke="#2A1E05" stroke-width="3"/></g></svg>`),
+  projektor: svg(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#2B2350"/>
+    <path d="M200 250 L40 30 L150 20 Z M200 250 L250 15 L370 40 Z" fill="#FFE27A" opacity=".18"/>
+    ${[[60,70,9],[110,40,6],[150,95,7],[95,130,5],[240,60,8],[300,40,6],[330,110,9],[280,140,5],[200,35,5],[40,170,6],[360,190,5],[180,140,4]].map(([x,y,r])=>`<path d="M${x} ${y-r*2} L${x+r*0.6} ${y-r*0.6} L${x+r*2} ${y} L${x+r*0.6} ${y+r*0.6} L${x} ${y+r*2} L${x-r*0.6} ${y+r*0.6} L${x-r*2} ${y} L${x-r*0.6} ${y-r*0.6} Z" fill="#FFE27A"/>`).join("")}
+    <path d="M318 62 a26 26 0 1 0 22 40 a20 20 0 1 1 -22 -40z" fill="#FFF3C4"/>
+    <ellipse cx="200" cy="350" rx="110" ry="16" fill="#1A1533"/>
+    <rect x="110" y="290" width="180" height="56" rx="18" fill="#E8336F" stroke="#2A1E05" stroke-width="5"/>
+    <circle cx="150" cy="318" r="9" fill="#FFD23F" stroke="#2A1E05" stroke-width="3"/><circle cx="180" cy="318" r="9" fill="#14B8A6" stroke="#2A1E05" stroke-width="3"/>
+    <path d="M115 292 a85 85 0 0 1 170 0 z" fill="#2D7FF9" stroke="#2A1E05" stroke-width="5" stroke-linejoin="round"/>
+    ${[[160,262],[200,240],[240,262],[180,280],[222,282],[200,268]].map(([x,y])=>`<path d="M${x} ${y-8} L${x+2.5} ${y-2.5} L${x+8} ${y} L${x+2.5} ${y+2.5} L${x} ${y+8} L${x-2.5} ${y+2.5} L${x-8} ${y} L${x-2.5} ${y-2.5} Z" fill="#FFE27A" stroke="#2A1E05" stroke-width="2"/>`).join("")}
+    <ellipse cx="170" cy="236" rx="14" ry="8" fill="#fff" opacity=".35" transform="rotate(-30 170 236)"/></svg>`),
+  penal: svg(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#DDEBFF"/>
+    ${[["#E8336F",-26],["#FFD23F",-12],["#14B8A6",2],["#8B5CF6",16],["#FF8A00",30]].map(([c,r])=>`<g transform="rotate(${r} 200 300)"><rect x="188" y="70" width="24" height="200" rx="6" fill="#fff" stroke="#2A1E05" stroke-width="5"/><rect x="188" y="70" width="24" height="60" rx="6" fill="${c}" stroke="#2A1E05" stroke-width="5"/><circle cx="200" cy="150" r="5" fill="${c}"/></g>`).join("")}
+    <rect x="60" y="210" width="280" height="120" rx="40" fill="#FF8A00" stroke="#2A1E05" stroke-width="5"/>
+    <path d="M90 236 h220" stroke="#FFD23F" stroke-width="8" stroke-linecap="round"/><path d="M90 236 h220" stroke="#2A1E05" stroke-width="3" stroke-dasharray="6 6"/>
+    <rect x="300" y="226" width="20" height="30" rx="6" fill="#FFD23F" stroke="#2A1E05" stroke-width="4"/>
+    <circle cx="200" cy="290" r="18" fill="#FFD23F" stroke="#2A1E05" stroke-width="4"/><path d="M193 290 l5 5 l9 -10" fill="none" stroke="#2A1E05" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>`),
+  kasicka: svg(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#FFE1EC"/>
+    <circle cx="200" cy="70" r="26" fill="#FFD23F" stroke="#2A1E05" stroke-width="5"/><text x="200" y="77" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="19" fill="#2A1E05">Kč</text>
+    <path d="M200 102 v14" stroke="#2A1E05" stroke-width="4" stroke-dasharray="4 5"/>
+    <rect x="130" y="300" width="34" height="50" rx="10" fill="#F27BA6" stroke="#2A1E05" stroke-width="5"/>
+    <rect x="236" y="300" width="34" height="50" rx="10" fill="#F27BA6" stroke="#2A1E05" stroke-width="5"/>
+    <path d="M330 230 c26 -6 30 24 10 22 c-14 -2 -6 -22 8 -12" fill="none" stroke="#2A1E05" stroke-width="5" stroke-linecap="round"/>
+    <ellipse cx="205" cy="235" rx="135" ry="100" fill="#FF9DC1" stroke="#2A1E05" stroke-width="5"/>
+    <path d="M150 150 l-10 -40 l40 24 z" fill="#F27BA6" stroke="#2A1E05" stroke-width="5" stroke-linejoin="round"/>
+    <rect x="170" y="134" width="70" height="12" rx="6" fill="#2A1E05"/>
+    <ellipse cx="78" cy="240" rx="32" ry="38" fill="#F27BA6" stroke="#2A1E05" stroke-width="5"/>
+    <ellipse cx="70" cy="226" rx="5" ry="8" fill="#2A1E05"/><ellipse cx="70" cy="256" rx="5" ry="8" fill="#2A1E05"/>
+    <circle cx="140" cy="210" r="9" fill="#2A1E05"/><circle cx="136" cy="206" r="3" fill="#fff"/>
+    <ellipse cx="160" cy="262" rx="18" ry="10" fill="#E8336F" opacity=".35"/>
+    <ellipse cx="250" cy="190" rx="30" ry="14" fill="#fff" opacity=".35" transform="rotate(-15 250 190)"/></svg>`),
   darek: svg(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#FFF3C4"/>
     <rect x="95" y="170" width="210" height="160" rx="10" fill="#8B5CF6" stroke="#2A1E05" stroke-width="5"/>
     <rect x="80" y="130" width="240" height="50" rx="10" fill="#A78BFA" stroke="#2A1E05" stroke-width="5"/>
@@ -226,6 +256,9 @@ const IMAGES = Object.assign({}, ART, PHOTOS);
 
 /* Když sloupec Foto zůstane prázdný, obrázek se vybere podle názvu dárku */
 const GUESS = [
+  ["projektor",/projekt|hvězd|hvezd|noční obloh/],
+  ["penal",/penál|penal|gelov/],
+  ["kasicka",/kasičk|kasick|šetř|setr|prasátk/],
   ["antistres",/antistres/], ["belitko",/bělítk|belitk|korektor/], ["koralky",/korál|koral|náramk/],
   ["kniha",/knih|detektiv/], ["karta",/kart|poukaz/], ["hra",/stoln|hra\b|hru\b/],
   ["kocka",/plyš|plys|polšt|pusheen|kočk|kock/], ["ramecek",/rámeč|ramec/], ["truhla",/truhl/],
